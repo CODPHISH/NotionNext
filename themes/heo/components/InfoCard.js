@@ -40,23 +40,23 @@ export function InfoCard(props) {
         </div>
       </div>
 
-      <h2 className='text-3xl font-extrabold mt-3'>{siteConfig('AUTHOR')}</h2>
+      <h2 className='mt-3 text-3xl font-extrabold'>{siteConfig('AUTHOR')}</h2>
 
       {/* 公告栏 */}
       <Announcement post={notice} style={{ color: 'white !important' }} />
 
       <div className='flex justify-between'>
-        <div className='flex space-x-3  hover:text-black dark:hover:text-white'>
+        <div className='flex space-x-3 hover:text-black dark:hover:text-white'>
           {/* 两个社交按钮 */}
           {url1 && (
-            <div className='w-10 text-center bg-indigo-400 p-2 rounded-full  transition-colors duration-200 dark:bg-yellow-500 dark:hover:bg-black hover:bg-white'>
+            <div className='w-10 p-2 text-center transition-colors duration-200 bg-indigo-400 rounded-full dark:bg-yellow-500 dark:hover:bg-black hover:bg-white'>
               <Link href={url1}>
                 <i className={icon1} />
               </Link>
             </div>
           )}
           {url2 && (
-            <div className='bg-indigo-400 p-2 rounded-full w-10 items-center flex justify-center transition-colors duration-200 dark:bg-yellow-500 dark:hover:bg-black hover:bg-white'>
+            <div className='flex items-center justify-center w-10 p-2 transition-colors duration-200 bg-indigo-400 rounded-full dark:bg-yellow-500 dark:hover:bg-black hover:bg-white'>
               <Link href={url2}>
                 <i className={icon2} />
               </Link>
@@ -64,7 +64,7 @@ export function InfoCard(props) {
           )}
         </div>
         {/* 第三个按钮 */}
-        <MoreButton />
+        {/* <MoreButton /> */}
       </div>
     </Card>
   )
@@ -112,7 +112,7 @@ function GreetingsWords() {
   return (
     <div
       onClick={handleChangeGreeting}
-      className=' select-none cursor-pointer py-1 px-2 bg-indigo-400 hover:bg-indigo-50  hover:text-indigo-950 dark:bg-yellow-500 dark:hover:text-white dark:hover:bg-black text-sm rounded-lg  duration-200 transition-colors'>
+      className='px-2 py-1 text-sm transition-colors duration-200 bg-indigo-400 rounded-lg cursor-pointer select-none  hover:bg-indigo-50 hover:text-indigo-950 dark:bg-yellow-500 dark:hover:text-white dark:hover:bg-black'>
       {greeting}
     </div>
   )
