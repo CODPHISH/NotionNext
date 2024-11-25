@@ -107,7 +107,8 @@ const nextConfig = {
       'p1.qhimg.com',
       'webmention.io',
       'ko-fi.com',
-      'csdnimg.cn'
+      'csdnimg.cn',
+      'img-blog.csdnimg.cn'
     ]
   },
 
