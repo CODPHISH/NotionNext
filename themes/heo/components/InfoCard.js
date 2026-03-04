@@ -1,7 +1,7 @@
 import { ArrowRightCircle } from '@/components/HeroIcons'
 import LazyImage from '@/components/LazyImage'
 import { siteConfig } from '@/lib/config'
-import Link from 'next/link'
+import SmartLink from '@/components/SmartLink'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 import CONFIG from '../config'
@@ -51,15 +51,19 @@ export function InfoCard(props) {
           {url1 && (
             <div className='w-10 p-2 text-center transition-colors duration-200 bg-indigo-400 rounded-full dark:bg-yellow-500 dark:hover:bg-black hover:bg-white'>
               <Link href={url1}>
+            <div className='w-10 p-2 text-center transition-colors duration-200 bg-indigo-400 rounded-full dark:bg-yellow-500 dark:hover:bg-black hover:bg-white'>
+              <SmartLink href={url1}>
                 <i className={icon1} />
-              </Link>
+              </SmartLink>
             </div>
           )}
           {url2 && (
             <div className='flex items-center justify-center w-10 p-2 transition-colors duration-200 bg-indigo-400 rounded-full dark:bg-yellow-500 dark:hover:bg-black hover:bg-white'>
               <Link href={url2}>
+            <div className='flex items-center justify-center w-10 p-2 transition-colors duration-200 bg-indigo-400 rounded-full dark:bg-yellow-500 dark:hover:bg-black hover:bg-white'>
+              <SmartLink href={url2}>
                 <i className={icon2} />
-              </Link>
+              </SmartLink>
             </div>
           )}
         </div>
@@ -81,7 +85,7 @@ function MoreButton() {
     return <></>
   }
   return (
-    <Link href={url3}>
+    <SmartLink href={url3}>
       <div
         className={
           'group bg-indigo-400 dark:bg-yellow-500 hover:bg-white dark:hover:bg-black hover:text-black dark:hover:text-white flex items-center transition-colors duration-200 py-2 px-3 rounded-full space-x-1'
@@ -93,7 +97,7 @@ function MoreButton() {
         />
         <div className='font-bold'>{text3}</div>
       </div>
-    </Link>
+    </SmartLink>
   )
 }
 
@@ -112,7 +116,7 @@ function GreetingsWords() {
   return (
     <div
       onClick={handleChangeGreeting}
-      className='px-2 py-1 text-sm transition-colors duration-200 bg-indigo-400 rounded-lg cursor-pointer select-none  hover:bg-indigo-50 hover:text-indigo-950 dark:bg-yellow-500 dark:hover:text-white dark:hover:bg-black'>
+      className='px-2 py-1 text-sm transition-colors duration-200 bg-indigo-400 rounded-lg cursor-pointer select-none hover:bg-indigo-50 hover:text-indigo-950 dark:bg-yellow-500 dark:hover:text-white dark:hover:bg-black'>
       {greeting}
     </div>
   )
