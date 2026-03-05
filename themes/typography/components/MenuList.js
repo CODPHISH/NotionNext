@@ -73,7 +73,7 @@ export const MenuList = ({ customNav, customMenu }) => {
       {/* 移动端小屏菜单 - 水平排列 */}
       <div
         id='nav-menu-mobile'
-        className='flex md:hidden my-auto justify-center space-x-4'>
+        className='flex justify-center my-auto space-x-4 md:hidden'>
         {links?.map((link, index) => (
           <MenuItemDrop key={index} link={link} />
         ))}

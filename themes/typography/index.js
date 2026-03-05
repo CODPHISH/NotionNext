@@ -72,7 +72,7 @@ const LayoutBase = props => {
 
         {siteConfig('SIMPLE_TOP_BAR', null, CONFIG) && <TopBar {...props} />}
 
-        <div className='flex flex-1 mx-auto overflow-hidden py-8 md:p-0 md:max-w-7xl md:px-24 w-screen'>
+        <div className='flex flex-1 w-screen py-8 mx-auto overflow-hidden md:p-0 md:max-w-7xl md:px-24'>
           {/* 主体 - 使用 flex 布局 */}
           {/* 文章详情才显示 */}
           {/* {props.post && (
@@ -80,11 +80,11 @@ const LayoutBase = props => {
               <Catalog {...props} />
             </div>
           )} */}
-          <div className='overflow-hidden md:mt-20 flex-1 '>
+          <div className='flex-1 overflow-hidden md:mt-20 '>
             {/* 左侧内容区域 - 可滚动 */}
             <div
               id='container-inner'
-              className='h-full w-full md:px-24 overflow-y-auto scroll-hidden relative'>
+              className='relative w-full h-full overflow-y-auto md:px-24 scroll-hidden'>
               {/* 移动端导航 - 显示在顶部 */}
               <div className='md:hidden'>
                 <NavBar {...props} />
@@ -92,14 +92,14 @@ const LayoutBase = props => {
               {onLoading ? (
                 // loading 时显示 spinner
                 <div className='flex items-center justify-center min-h-[500px] w-full'>
-                  <div className='animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-gray-900 dark:border-white'></div>
+                  <div className='w-12 h-12 border-t-2 border-b-2 border-gray-900 rounded-full animate-spin dark:border-white'></div>
                 </div>
               ) : (
                 <>{children}</>
               )}
               <AdSlot type='native' />
               {/* 移动端页脚 - 显示在底部 */}
-              <div className='md:hidden  z-30  '>
+              <div className='z-30 md:hidden '>
                 <Footer {...props} />
               </div>
             </div>
@@ -112,7 +112,7 @@ const LayoutBase = props => {
           </div>
         </div>
 
-        <div className='fixed right-4 bottom-4 z-20'>
+        <div className='fixed z-20 right-4 bottom-4'>
           <JumpToTopButton />
         </div>
 
@@ -204,7 +204,7 @@ const LayoutArchive = props => {
   const sortPosts = groupArticlesByYearArray(posts)
   return (
     <>
-      <div className='mb-10 pb-20 md:pb-12 p-5  min-h-screen w-full'>
+      <div className='w-full min-h-screen p-5 pb-20 mb-10 md:pb-12'>
         {sortPosts.map(p => (
           <BlogArchiveItem
             key={p.year}
@@ -304,7 +304,7 @@ const LayoutCategoryIndex = props => {
   const { categoryOptions } = props
   return (
     <>
-      <div id='category-list' className='px-5 duration-200 flex flex-wrap'>
+      <div id='category-list' className='flex flex-wrap px-5 duration-200'>
         {categoryOptions?.map(category => {
           return (
             <SmartLink
@@ -336,7 +336,7 @@ const LayoutTagIndex = props => {
   const { tagOptions } = props
   return (
     <>
-      <div id='tags-list' className='px-5 duration-200 flex flex-wrap'>
+      <div id='tags-list' className='flex flex-wrap px-5 duration-200'>
         {tagOptions.map(tag => {
           return (
             <div key={tag.name} className='p-2'>
